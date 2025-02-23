@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write  # Ensure GitHub Actions can push changes
   pages: write
   id-token: write
 
@@ -42,3 +42,4 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}  # Authenticate with GITHUB_TOKEN
